@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsnd --clear src/app.ts"
+    "dev": "tsnd --clear src/app.ts",
+    "start": "tsnd --clear src/app.ts"
   },
   "keywords": [],
   "author": "",
