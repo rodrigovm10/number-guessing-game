@@ -12,7 +12,10 @@ export function generateRandomNumber(): number {
   return Math.floor(Math.random() * 100) + 1
 }
 
-export async function guessNumber(target: number, attempts: number): Promise<void> {
+export async function guessNumber(
+  target: number,
+  attempts: number
+): Promise<{ attemptsTried?: number; winGame: boolean }> {
   let attemptsTried: number = 1
 
   while (attempts > 0) {
@@ -30,7 +33,7 @@ export async function guessNumber(target: number, attempts: number): Promise<voi
           `\nCongratulations! You guessed the correct number in ${attemptsTried} attempts. 🎉\n`
         )
       )
-      return
+      return { attemptsTried, winGame: true }
     }
 
     console.log(
@@ -48,4 +51,5 @@ export async function guessNumber(target: number, attempts: number): Promise<voi
       console.log(`You have ${attempts} attempts remaining.\n`)
     }
   }
+  return { attemptsTried: attemptsTried - 1, winGame: false }
 }

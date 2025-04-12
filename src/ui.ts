@@ -14,6 +14,10 @@ export function showWelcome() {
   console.log(green('1. Easy (10 chances)   😄 '))
   console.log(yellow('2. Medium (5 chances)  😐 '))
   console.log(red('3. Hard (3 chances)    😡 \n'))
+
+  console.log('Options:')
+  console.log('H - Show history ')
+  console.log('Q - Quit game \n')
 }
 
 export async function askQuestion(question: string): Promise<string> {
