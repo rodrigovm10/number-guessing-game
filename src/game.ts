@@ -1,5 +1,5 @@
 import { error } from 'console'
-import { askQuestion, closeInterface } from './ui'
+import { askQuestion } from './ui'
 import { green, red } from './config/styles'
 
 export const GAME_CONFIGURATION = [
@@ -26,7 +26,9 @@ export async function guessNumber(target: number, attempts: number): Promise<voi
 
     if (guess === target) {
       console.log(
-        green(`Congratulations! You guessed the correct number in ${attemptsTried} attempts. 🎉\n`)
+        green(
+          `\nCongratulations! You guessed the correct number in ${attemptsTried} attempts. 🎉\n`
+        )
       )
       return
     }

@@ -16,7 +16,15 @@ async function main() {
 
   const { attempts, difficulty } = GAME_CONFIGURATION[choice - 1]
   console.log(`\nYou chose "${difficulty}" with ${attempts} attempts.\n`)
+
+  const startTime = Date.now()
+
   await guessNumber(numberToGuess, attempts)
+
+  const endTime = Date.now()
+
+  const timeTaken = ((endTime - startTime) / 1000).toFixed(2)
+  console.log(`⏲️ You finished the game in ${timeTaken} seconds.\n`)
 }
 
 async function startGameLoop() {
